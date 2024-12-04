@@ -1,0 +1,58 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para a navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 0 30px;
+}
+
+/* Estilos para a logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+}
+
+/* Estilos para o menu */
+.menu {
+    flex: 70%;
+    text-align: right;
+    padding: 20px;
+}
+
+.menu a {
+    color: #125B9A;
+    text-decoration: none;
+    font-size: 32px;
+    padding: 20px 16px;
+    margin: 0 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover para os links do menu */
+.menu a:hover {
+    background-color: #125B9A;
+    color: white;
+    border-radius: 5px;
+}
