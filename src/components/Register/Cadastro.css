@@ -1,0 +1,166 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para a navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 0 30px;
+}
+
+/* Estilos para a logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+}
+
+/* Estilos para o menu */
+.menu {
+    flex: 70%;
+    text-align: right;
+    padding: 20px;
+}
+
+.menu a {
+    color: #125B9A;
+    text-decoration: none;
+    font-size: 32px;
+    padding: 20px 16px;
+    margin: 0 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover para os links do menu */
+.menu a:hover {
+    background-color: #125B9A;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.content {
+    width: 100%; /* Faz o conteúdo ocupar toda a largura */
+    height: 100%; /* Faz o conteúdo ocupar toda a altura */
+    margin-top: 120px; /* Ajusta o espaçamento superior para não sobrepor a navbar */
+    padding: 30px; /* Aumenta o padding para melhorar o espaçamento */
+    background-color: white;
+    border-radius: 0; /* Remove qualquer borda arredondada */
+    box-shadow: none; /* Remove o sombreado */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Alinha os itens ao centro */
+}
+
+/* Título da página */
+.content h1 {
+    font-size: 26px; /* Aumenta o tamanho da fonte do título */
+    margin-bottom: 20px;
+    color: #125B9A;
+}
+
+/* Formulário de cadastro */
+.register-form {
+    display: flex;
+    flex-direction: column; /* Alinha os itens na vertical */
+    gap: 20px; /* Aumenta o espaço entre os campos */
+    align-items: stretch; /* Faz os campos ocuparem toda a largura disponível */
+    width: 100%; /* Faz o formulário ocupar toda a largura */
+}
+
+.register-form label {
+    font-size: 16px;
+    color: #555;
+    text-align: left;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 12px; /* Aumenta o padding para maior conforto no preenchimento */
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register-form button {
+    padding: 12px; /* Aumenta o padding para maior conforto */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    background-color: #125B9A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Faz o botão ocupar toda a largura */
+}
+
+.register-form button:hover {
+    background-color: #0d3f72;
+}
+
+/* Link de redirecionamento para login */
+.redirect {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.redirect a {
+    color: #125B9A;
+    text-decoration: none;
+}
+
+.redirect a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para inputs do formulário */
+.register-form input:focus {
+    border-color: #125B9A;
+    outline: none;
+}
+
+/* Responsividade: Ajuste para dispositivos menores */
+@media (max-width: 600px) {
+    .content {
+        width: 100%; /* Ajusta a largura para dispositivos pequenos */
+        padding: 20px;
+    }
+    
+    .register-form label {
+        font-size: 14px;
+    }
+
+    .register-form input {
+        font-size: 14px;
+    }
+
+    .register-form button {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .redirect {
+        font-size: 12px;
+    }
+}

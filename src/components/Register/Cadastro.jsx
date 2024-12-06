@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import "../assets/css/cadastro.css"; // Ajuste o caminho conforme necessário
-import Navbar from "./Navbar";
+import { Navbar } from '../NavBar';
 import { Link } from 'react-router-dom';
+import "./Cadastro.css"; 
 
 const Cadastro = () => {
   const [formData, setFormData] = useState({
@@ -85,4 +85,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export { Cadastro };

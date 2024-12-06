@@ -1,6 +1,7 @@
 import React from "react";
-import "../assets/css/sobrenos.css"; // Caminho correto para o estilo da página "Sobre Nós"
-import Navbar from "./Navbar";
+import { Navbar } from '../NavBar';
+import jpeg from "../../assets/images/image1.png";
+import "./AboutPage.css";
 
 
 const AboutPage = () => {
@@ -20,7 +21,7 @@ const AboutPage = () => {
         </div>
         <div className="image-container">
           <img
-            src="/assets/images/image1.png"
+            src={jpeg}
             alt="Imagem de um celular com a logo da Callmar"
             className="image-responsiva"
           />
@@ -30,4 +31,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export { AboutPage };

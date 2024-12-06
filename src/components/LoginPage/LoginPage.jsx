@@ -1,6 +1,6 @@
 import React from 'react';
-import "../assets/css/login.css"; // Certifique-se de ajustar o caminho conforme necessário
-import Navbar from "./Navbar";  // Certifique-se de que o caminho da Navbar está correto
+import { Navbar } from '../NavBar';
+import "./LoginPage.css"; 
 
 const Login = () => {
     return (
@@ -63,4 +63,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export { Login };

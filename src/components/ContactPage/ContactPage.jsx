@@ -1,6 +1,6 @@
 import React from "react";
-import "../assets/css/contact.css"; // Ajuste o caminho conforme necessário
-import Navbar from "./Navbar";
+import { Navbar } from '../NavBar';
+import "./Contact.css";
 
 const ContactPage = () => {
   return (
@@ -25,4 +25,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export { ContactPage };
