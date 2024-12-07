@@ -1,6 +1,6 @@
-export async function getWaether(address) {
+export async function getWeather(address) {
     
-    const uri = "https://beachtest.onrender.com/api/weather?address="
+    const uri = "https://backbechmap.onrender.com/api/weather?address="
     const uriBase = `${uri}${address}`
     
     try {

@@ -1,5 +1,7 @@
 import { Button, Col, Container, FormControl, InputGroup } from "react-bootstrap";
 import mp4 from "../../assets/videos/callmar.mp4";
+import { getGeocode } from "../../utils/getGeocode";
+import { getWeather } from "../../utils/getWeather";
 import "./HomePage.css";
 import { Search } from "react-bootstrap-icons";
 import { useState } from "react";
@@ -7,14 +9,53 @@ import { useNavigate } from "react-router-dom";
 
 
 const HomePage = () => {
-  const [query, setQuery] = useState('');
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook de navegação
+  const [search, setSearch] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSearch = () => {
-    if (query.trim()) {
-      navigate(`/mapa${query}`);
-    }
+  const getData = async () => {
+      setIsLoading(true);
+      
+      try {
+          // Busca simultânea de geocodificação e dados meteorológicos
+          const [geocode, weather] = await Promise.all([
+              getGeocode(search),
+              getWeather(search)
+          ]);
+
+          // Validações dos dados obtidos
+          if (!geocode) {
+              throw new Error('Não foi possível encontrar as coordenadas da praia');
+          }
+
+          if (!weather) {
+              throw new Error('Não foi possível obter os dados meteorológicos');
+          }
+
+          
+          navigate("/mapa", { 
+              state: { 
+                  target: geocode.properties.address.formattedAddress,
+                  geocodeData: geocode,
+                  weatherData: weather 
+              } 
+          });
+
+      } catch (error) {
+          console.error("Erro ao obter os dados:", error);
+      } finally {
+          setIsLoading(false);
+      }
   };
+
+  const handleSearchClick = () => {
+      if (search.trim()) {
+          getData();
+      } else {
+          console.error('Por favor, digite o nome de uma praia.');
+      }
+  };
+
 
   return (
     <>
@@ -28,24 +69,20 @@ const HomePage = () => {
           Com o CallMar você encontrará um novo jeito de curtir as praias
           do litoral pernambucano com segurança e tranquilidade
         </p>
-        <div className="search-box">
-              <input type="text" placeholder="Para onde vamos?" />
-              <button type="submit">🔍</button>
-
-        </div>
-        <Container fluid>
+        <Container>
           <Col lg={5} id="searchBar">
-            <InputGroup>
+            <InputGroup id="inputGroup">
               <FormControl
                 id="inputCustom"
                 placeholder="Para onde vamos?"
                 aria-label="Pesquisar"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
               <Button
                 id="buttonCustom"
-                onClick={handleSearch}
+                onClick={handleSearchClick}
+                disabled={isLoading}
               >
                 <Search className="search-icon" id="iconCustom"/>
               </Button>

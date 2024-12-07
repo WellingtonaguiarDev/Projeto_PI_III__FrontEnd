@@ -1,11 +1,9 @@
 import React from "react";
-import { Navbar } from '../NavBar';
 import "./Contact.css";
 
 const ContactPage = () => {
   return (
     <>
-    <Navbar />
     <div className="content">
       <h1>Como podemos ajudar?</h1>
       <form className="contact-form">

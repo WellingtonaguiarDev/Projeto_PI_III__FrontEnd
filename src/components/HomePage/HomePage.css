@@ -49,45 +49,20 @@
     color: white;
 }
 
-/* Estilos para o campo de pesquisa */
-.search-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    position: relative; /* Necessário para posicionar a lupa dentro do campo */
-}
-
-/* Ajustes no campo de input */
-.search-box input {
-    padding: 10px 20px; /* Adiciona mais espaço à esquerda */
-    font-size: 1.2rem;
-    width: 400px; /* Aumenta a largura do campo de pesquisa */
-    border: none;
-    border-radius: 5px;
-    padding-right: 40px; /* Cria espaço à direita para a lupa */
-}
-
-/* Estilo para o botão da lupa à direita */
-.search-box button {
-    position: absolute;
-    right: 10px; /* Posiciona a lupa dentro do campo, à direita */
-    background: transparent;
-    border: none;
-    color: #125B9A;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
 #searchBar {
     display: flex;
     flex-direction: row;
     justify-self: center;
 }
 
+#inputGroup {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 #inputCustom {
     font-size: 1.2rem;
-    border: none;
     background-color: white;
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;

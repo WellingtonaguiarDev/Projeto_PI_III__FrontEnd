@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Navbar } from '../NavBar';
 import { Link } from 'react-router-dom';
 import "./Cadastro.css"; 
 
@@ -27,7 +26,6 @@ const Cadastro = () => {
 
   return (
     <>
-      <Navbar />
       <main className="content">
         <h1>Crie sua conta</h1>
         <form className="register-form" onSubmit={handleSubmit}>

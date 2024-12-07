@@ -1,11 +1,9 @@
 import React from 'react';
-import { Navbar } from '../NavBar';
 import "./LoginPage.css"; 
 
 const Login = () => {
     return (
         <>
-            <Navbar />
             <main>
                 <section className="login-area">
                     <div className="login-container">

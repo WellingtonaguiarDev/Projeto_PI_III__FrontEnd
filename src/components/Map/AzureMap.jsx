@@ -7,7 +7,7 @@ import { createRoot } from 'react-dom/client';
 import { Placeholder } from 'react-bootstrap';
 import './AzureMap.css';
 
-const MapaAzure = ({ coord }) => {
+const MapaAzure = ({ coord, Listrisks }) => {
     const [isLoading, setIsLoading] = useState(true);
     const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -50,7 +50,7 @@ const MapaAzure = ({ coord }) => {
                         map.events.add('click', marker, () => {
                             const popupContainer = document.createElement('div');
                             const root = createRoot(popupContainer);
-                            root.render(<Flashcard />);
+                            root.render(<Flashcard risks={Listrisks} />);
                             
                             // Cria um popup
                             const popup = new atlas.Popup({

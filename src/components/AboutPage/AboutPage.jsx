@@ -1,5 +1,4 @@
 import React from "react";
-import { Navbar } from '../NavBar';
 import jpeg from "../../assets/images/image1.png";
 import "./AboutPage.css";
 
@@ -7,7 +6,6 @@ import "./AboutPage.css";
 const AboutPage = () => {
   return (
     <>
-      <Navbar />
       <section className="sobre-nos">
         <div className="container">
           <h1>Sobre Nós</h1>

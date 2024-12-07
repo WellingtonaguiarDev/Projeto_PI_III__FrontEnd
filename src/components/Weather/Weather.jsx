@@ -10,12 +10,12 @@ import { QualityAir } from './subComponents/QualityAir/QualityAir';
 import { Temperature } from './subComponents/Temperature/Temperature';
 import { IndexUV } from './subComponents/UVindex/UV';
 import { Wind } from './subComponents/Wind/Wind';
-import styles from './Weather.module.css';
+import './Weather.css';
 
 
 const AzureWeather = ({target, data}) => {
     return (
-        <Container>
+        <Container id="containerWeather">
             {data ? (
                 
                     <Card>

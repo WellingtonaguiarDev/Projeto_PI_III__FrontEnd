@@ -1,29 +1,38 @@
-import {Card, Row } from "react-bootstrap";
+import {Alert, Card, Row } from "react-bootstrap";
 import './Flashcard.css';
-import shark from '../../assets/images/img-flashcard/shark_icon.svg';
-import jellies from '../../assets/images/img-flashcard/jellies_icon.svg';
 
-const Flashcard = () => {
-    return (
+const Flashcard = ({ risks }) => {
+
+    if (!risks || risks.length === 0) {
+        return (
+            <Card id="Card">
+                <Card.Header>Avisos</Card.Header>
+                <Card.Body>
+                    <Alert variant="success">
+                        <p>Boa notícia! Nenhum risco identificado para esta praia.</p>
+                        <p>Aproveite seu dia com tranquilidade! 🏖️</p>
+                    </Alert>
+                </Card.Body>
+            </Card>
+        );
+    }
+
+    return (    
         <Card id="Card">
             <Card.Header>Avisos</Card.Header>
-            <Card.Body>
-                <Card.Text>Opa aqui é um aviso</Card.Text>
-                <Card.Text>Opa esse aviso está muito grande</Card.Text>
-                <Card.Text>Opa aqui é um aviso</Card.Text>
-                <Card.Text>Opa aqui é um aviso</Card.Text>
-                <Row>
-                    <Card.Img src={shark} id="icon" className="col-3" />
-                    <Card.Text className="col">Risco de ataques de Tubarão.</Card.Text>
-                </Row>
-                <Row>
-                    <Card.Img src={jellies} id="icon" className="col-3"></Card.Img>
-                    <Card.Text className="col">Risco de acidentes com Águas-vivas.</Card.Text>
-                </Row>
-                <Card.Text>Opa aqui é um aviso para que as pessoas possa se proteger</Card.Text>
-                <Card.Text>Opa aqui é um aviso</Card.Text>
-            </Card.Body>
+                <Card.Body>
+                <Alert variant="warning">
+                    {risks.map((risks, index) =>(
+                        <Row key={index}>
+                            <Card.Img src={require(`../../assets/images/img-flashcard/${risks.icon}`)} id="icon" className="col-3" />
+                            <Card.Text className="col">{risks.message}</Card.Text>
+                        </Row>
+
+                    ))}
+                    </Alert>
+                </Card.Body>
         </Card>
+        
     );
 };
 
