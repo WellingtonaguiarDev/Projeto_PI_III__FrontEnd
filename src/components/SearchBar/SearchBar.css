@@ -1,0 +1,31 @@
+#inputGroup {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+}
+#inputCustom {
+    font-size: 1.2rem;
+    background-color: white;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    
+}
+
+#buttonCustom {
+    background-color: white;
+    width: 4rem;
+    color: #125B9A;
+    border: none;
+}
+
+#buttonCustom:hover {
+    background-color: #125B9A;
+    color: white;
+}
+
+#iconCustom {
+    height: 28px;
+    width: 22px;
+}
+
