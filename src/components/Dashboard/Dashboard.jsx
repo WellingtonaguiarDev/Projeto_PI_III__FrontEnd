@@ -28,7 +28,6 @@ const Dashboard = () => {
         
     }, [location.state]);
 
-    console.log("Riscos encontrados:", listRisks); 
     const checkForRisks = (searchTerm) => {
         const risks = risksData[searchTerm];
 
