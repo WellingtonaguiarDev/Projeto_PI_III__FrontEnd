@@ -10,7 +10,7 @@ import './AzureMap.css';
 const MapaAzure = ({ coord, Listrisks }) => {
     const [isLoading, setIsLoading] = useState(true);
     const apiKey = process.env.REACT_APP_API_KEY;
-    console.log(apiKey)
+
     useEffect(() => {
         let map = null;
         const initializeMap = async () => {
