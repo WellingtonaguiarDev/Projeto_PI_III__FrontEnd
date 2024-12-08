@@ -1,48 +1,58 @@
-const BASE_URL = 'https://back-end-repository-2.onrender.com/api/client';
+import axios from 'axios';
 
-export const register = async (userData) => {
-  console.log('Sending registration data to backend:', userData);
-  const response = await fetch(`${BASE_URL}/register`, { // Altere para a URL de registro correta
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(userData),
-  });
+const BASE_URL = 'http://localhost:8080/api';
 
-  if (!response.ok) {
-    console.error('Cadastro falhou com status:', response.status);
-    throw new Error('Cadastro falhou');
+export const loginUser = async (email, password) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/login`, {
+      email,
+      password
+    });
+    return response;
+  } catch (error) {
+    throw new Error(error.response.data || 'Erro ao fazer login');
   }
-
-  const data = await response.json();
-  return data; // Aqui você pode retornar uma mensagem de sucesso ou dados do usuário
 };
 
-export const login = async (credentials) => {
-  console.log('Sending credentials to backend:', credentials);
-  const response = await fetch(`${BASE_URL}/login`, { // Ajuste conforme necessário
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(credentials),
-  });
-
-  if (!response.ok) {
-    console.error('Login failed with status:', response.status);
-    throw new Error('Login failed');
+export const register = async (name, email, password) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/register`, {
+      name,
+      email,
+      password
+    });
+    return response;
+  } catch (error) {
+    throw new Error(error.response.data || 'Erro ao cadastrar');
   }
-
-  const data = await response.json();
-  localStorage.setItem('token', data.token);
-  return data;
 };
 
-export const logout = () => {
-  localStorage.removeItem('token');
+export const saveSearchHistory = async (userId, beachAddress) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/${userId}/saveSearchHistory`, {
+      beachAddress,
+      searchDate: new Date().toISOString()
+    });
+    return response;
+  } catch (error) {
+    throw new Error(error.response.data || 'Erro ao salvar histórico de busca');
+  }
 };
 
-export const isAuthenticated = () => {
-  return !!localStorage.getItem('token');
+export const updateUser = async (id, userDTO) => {
+  try {
+    const response = await axios.put(`${BASE_URL}/${id}/update`, userDTO);
+    return response;
+  } catch (error) {
+    throw new Error(error.response.data || 'Erro ao atualizar');
+  }
+};
+
+export const deleteUser = async (id) => {
+  try {
+    const response = await axios.delete(`${BASE_URL}/${id}`);
+    return response;
+  } catch (error) {
+    throw new Error(error.response.data || 'Erro ao deletar');
+  }
 };
