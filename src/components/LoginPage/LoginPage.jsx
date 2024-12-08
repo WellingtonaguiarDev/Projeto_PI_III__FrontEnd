@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../authcontext';
-import { useNavigate } from 'react-router-dom'; // Importando o useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import "./LoginPage.css"; 
 
 const Login = () => {
     const { login } = useAuth();
-    const navigate = useNavigate(); // Instanciando o navigate
+    const navigate = useNavigate(); 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -13,10 +13,9 @@ const Login = () => {
         e.preventDefault();
         try {
             await login(email, password);
-            navigate('/'); // Redireciona para a página inicial após o login
+            navigate('/'); 
         } catch (error) {
             console.error("Erro ao fazer login:", error);
-            // Opcional: Adicione uma mensagem de erro para o usuário
         }
     };
 
