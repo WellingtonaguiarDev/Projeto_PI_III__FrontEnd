@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useAuth } from '../../authcontext';
+import { useNavigate } from 'react-router-dom'; // Importando o useNavigate
 import "./LoginPage.css"; 
 
 const Login = () => {
+    const { login } = useAuth();
+    const navigate = useNavigate(); // Instanciando o navigate
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await login(email, password);
+            navigate('/'); // Redireciona para a página inicial após o login
+        } catch (error) {
+            console.error("Erro ao fazer login:", error);
+            // Opcional: Adicione uma mensagem de erro para o usuário
+        }
+    };
+
     return (
         <>
             <main>
                 <section className="login-area">
                     <div className="login-container">
-                        <form className="login-form" action="login_action.php" method="POST">
+                        <form className="login-form" onSubmit={handleSubmit}>
                             <div className="input-group">
                                 <input
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Usuário"
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     required
                                 />
                             </div>
@@ -23,6 +43,8 @@ const Login = () => {
                                     id="password"
                                     name="password"
                                     placeholder="Senha"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     required
                                 />
                             </div>
