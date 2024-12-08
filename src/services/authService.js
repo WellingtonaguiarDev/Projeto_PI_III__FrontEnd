@@ -56,3 +56,14 @@ export const deleteUser = async (id) => {
     throw new Error(error.response.data || 'Erro ao deletar');
   }
 };
+
+export const getSearchHistory = async (userId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/${userId}/history`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response.data || 'Erro ao buscar histórico de busca');
+  }
+};
+
+
