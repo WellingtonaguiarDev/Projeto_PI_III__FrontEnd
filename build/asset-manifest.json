@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.86af49b8.css",
+    "main.js": "/static/js/main.d66ca67b.js",
+    "static/media/callmar.mp4": "/static/media/callmar.178c72b086f184322c5d.mp4",
+    "static/media/logo2.jpeg": "/static/media/logo2.a795900cf86870cefdce.jpeg",
+    "static/media/image1.png": "/static/media/image1.d8e219e30620d7ced5e7.png",
+    "static/media/logo.jpeg": "/static/media/logo.d25bf40279d22518f06a.jpeg",
+    "static/media/hermit-crab.svg": "/static/media/hermit-crab.8ae810289a858afbfa08.svg",
+    "static/media/jellyfish.svg": "/static/media/jellyfish.eb6d2e50f58aef9edfc4.svg",
+    "static/media/shark.svg": "/static/media/shark.f2a937ebe8e7010ada0d.svg",
+    "static/media/airQuality.svg": "/static/media/airQuality.43c23bee03c495f95843c2d84c848cf2.svg",
+    "static/media/16.svg": "/static/media/16.9268f92252e3bfc0038954447e517550.svg",
+    "static/media/17.svg": "/static/media/17.9268f92252e3bfc0038954447e517550.svg",
+    "static/media/14.svg": "/static/media/14.1b0c3d0bb2cc149172fcafe904c94a83.svg",
+    "static/media/2.svg": "/static/media/2.2e92f9eb6fae744a5aba7dad1755c58b.svg",
+    "static/media/3.svg": "/static/media/3.2e92f9eb6fae744a5aba7dad1755c58b.svg",
+    "static/media/4.svg": "/static/media/4.2e92f9eb6fae744a5aba7dad1755c58b.svg",
+    "static/media/6.svg": "/static/media/6.2e92f9eb6fae744a5aba7dad1755c58b.svg",
+    "static/media/12.svg": "/static/media/12.e6d1c28a2a1cdb69ba03045eca9a32d9.svg",
+    "static/media/18.svg": "/static/media/18.e6d1c28a2a1cdb69ba03045eca9a32d9.svg",
+    "static/media/5.svg": "/static/media/5.8e2b7f59f939fea383b57e2e8f57acd8.svg",
+    "static/media/UvIcon.svg": "/static/media/UvIcon.fa5b24de8029805a23cf7e3539e79421.svg",
+    "static/media/Temperature.svg": "/static/media/Temperature.db438a7ce7f5fbb2e21ba0e018cc6e53.svg",
+    "static/media/7.svg": "/static/media/7.74865ae969701e0d48010470e805879d.svg",
+    "static/media/8.svg": "/static/media/8.74865ae969701e0d48010470e805879d.svg",
+    "static/media/WindIcon.svg": "/static/media/WindIcon.a46900e75d237c04ffef22aeb905134e.svg",
+    "static/media/1.svg": "/static/media/1.9abac4b0500e309b346737f755e40939.svg",
+    "index.html": "/index.html",
+    "main.86af49b8.css.map": "/static/css/main.86af49b8.css.map",
+    "main.d66ca67b.js.map": "/static/js/main.d66ca67b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86af49b8.css",
+    "static/js/main.d66ca67b.js"
+  ]
+}
