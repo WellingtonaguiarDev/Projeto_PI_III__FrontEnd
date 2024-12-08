@@ -19,6 +19,7 @@
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     padding: 0 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para a logo */
@@ -63,15 +64,33 @@
     margin: 80px auto 50px;
     text-align: center;
     padding: 10vh;
-
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Fundo estilizado */
+body {
+    background: linear-gradient(135deg, #f0f8ff, #e6f7ff, #cceeff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+/* Animação suave no fundo */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Títulos */
 .content h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #125B9A;
 }
 
+/* Formulário */
 .contact-form {
     display: flex;
     flex-direction: column;
