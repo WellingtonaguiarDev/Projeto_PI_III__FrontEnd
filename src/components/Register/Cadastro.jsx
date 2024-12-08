@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'; // Adicionado para integração com a API
 import "./Cadastro.css"; 
 
 const Cadastro = () => {
@@ -10,6 +11,8 @@ const Cadastro = () => {
     confirmPassword: ''
   });
 
+  const [message, setMessage] = useState(null); // Estado para mensagens de sucesso/erro
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,10 +21,33 @@ const Cadastro = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Adicione a lógica para processar o formulário de cadastro
-    console.log(formData);
+
+    if (formData.password !== formData.confirmPassword) {
+      setMessage("As senhas não coincidem!");
+      return;
+    }
+
+    try {
+      const response = await axios.post('https://oceanmap-api.onrender.com/api/register', {
+        name: formData.fullname,
+        email: formData.email,
+        password: formData.password,
+      });
+      
+      setMessage("Cadastro realizado com sucesso!");
+      console.log(response.data);
+      setFormData({
+        fullname: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+      });
+    } catch (error) {
+      console.error("Erro ao cadastrar:", error.response?.data || error.message);
+      setMessage("Erro ao realizar cadastro. Tente novamente.");
+    }
   };
 
   return (
@@ -75,6 +101,7 @@ const Cadastro = () => {
 
           <button type="submit">Cadastrar</button>
         </form>
+        {message && <p className="message">{message}</p>} {/* Mensagem de feedback */}
         <p className="redirect">
           Já possui uma conta? <Link to="/login">Faça login</Link>.
         </p>
