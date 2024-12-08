@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.86af49b8.css",
-    "main.js": "/static/js/main.d66ca67b.js",
+    "main.css": "/static/css/main.b07a7ddb.css",
+    "main.js": "/static/js/main.45977f56.js",
     "static/media/callmar.mp4": "/static/media/callmar.178c72b086f184322c5d.mp4",
     "static/media/logo2.jpeg": "/static/media/logo2.a795900cf86870cefdce.jpeg",
     "static/media/image1.png": "/static/media/image1.d8e219e30620d7ced5e7.png",
@@ -27,11 +27,11 @@
     "static/media/WindIcon.svg": "/static/media/WindIcon.a46900e75d237c04ffef22aeb905134e.svg",
     "static/media/1.svg": "/static/media/1.9abac4b0500e309b346737f755e40939.svg",
     "index.html": "/index.html",
-    "main.86af49b8.css.map": "/static/css/main.86af49b8.css.map",
-    "main.d66ca67b.js.map": "/static/js/main.d66ca67b.js.map"
+    "main.b07a7ddb.css.map": "/static/css/main.b07a7ddb.css.map",
+    "main.45977f56.js.map": "/static/js/main.45977f56.js.map"
   },
   "entrypoints": [
-    "static/css/main.86af49b8.css",
-    "static/js/main.d66ca67b.js"
+    "static/css/main.b07a7ddb.css",
+    "static/js/main.45977f56.js"
   ]
 }
